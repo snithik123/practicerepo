@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       #d{
+         background-color: azure;
+         text-align: center;
+         display: inline;
+       }
+       button{
+         background: skyblue;
+         
+       }
+    </style>
+</head>
+<body>
+    <script>
+          let arr=[];
+         function addTodo(){
+            
+             
+             let itemvalue=document.getElementById("item").value;
+             if(itemvalue.trim()!=="")
+             {
+                arr.push(itemvalue);
+             
+             displaytodo();
+             document.getElementById("item").value="";}
+         }
+
+         function deleteTodo(){
+                if(arr.lenth===0)
+                {
+                    return;
+                }
+                else{
+                    arr.pop();
+                    displaytodo();
+                }
+         }
+         function displaytodo(){
+
+            let todovalue=document.getElementById("todo");
+            todovalue.innerHTML="";
+            for(let i=0;i<arr.length;i++)
+         {
+            let li=document.createElement("li")
+            li.textContent=arr[i];
+            todovalue.appendChild(li);
+         }
+         }
+    </script>
+    <div id="d">
+        <form onsubmit="return false;">
+            <label for="item">Item:</label>
+            <input type="text" name="item" id="item">
+            <br>
+            <br>
+            <button id="b1" onclick="addTodo()">Add todo</button>
+            <button id="b2" onclick="deleteTodo()">Delete todo</button>
+        </form>
+
+    </div>
+    <ul id="todo"></ul>
+</body>
+</html>

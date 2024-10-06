@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hamburger Icon */
+.menu-icon {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries for Smaller Screens */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+    }
+
+    nav ul li {
+        margin: 0;
+        padding: 10px;
+        text-align: right;
+    }
+
+    nav ul li a {
+        display: block;
+    }
+
+    /* Display the hamburger icon on small screens */
+    .menu-icon {
+        display: block;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <script>
+         function togglemenu(){
+            var myp=document.getElementById("nav-menu").getElementsByTagName('ul')[0]
+            if(myp.style.display==='block')
+         {
+            myp.style.display='none';
+         }
+         else{
+            myp.style.display='block';
+         }
+         }
+    </script>
+    <header>
+        <h1>welcome to menu</h1>
+        <div id="menu-icon" onclick="togglemenu()">_</div>
+            <nav id="nav-menu">
+            <ul>
+                <li><a href="home">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="menu">Menu</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+   
+    <main>
+        <Section>
+            <h2>welcome</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo, illo. Culpa, at quod enim possimus impedit nobis fugiat, dolorum molestiae exercitationem beatae sit incidunt debitis voluptas officiis velit reprehenderit sequi!</p>
+        </Section>
+    </main>
+
+    <footer>
+        <p>&copy; my page</p>
+    </footer>
+</body>
+</html>
